@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 
 Use App\Article;
+use App\UsuariosDaLivrariaController;
+use App\AutorController;
+use App\LivroController;
+use App\AutorLivroController;
+use App\LocacoesController;
  
 Route::get('articles', 'ArticleController@index');
 Route::get('articles/{article}', 'ArticleController@show');
@@ -11,10 +16,10 @@ Route::put('articles/{article}', 'ArticleController@update');
 Route::delete('articles/{article}', 'ArticleController@delete');
 
 Route::get('autor', 'AutorController@index');
-Route::get('autor/{article}', 'AutorController@show');
+Route::get('autor/{autor}', 'AutorController@show');
 Route::post('autor', 'AutorController@store');
-Route::put('autor/{article}', 'AutorController@update');
-Route::delete('autor/{article}', 'AutorController@delete');
+Route::put('autor/{autor}', 'AutorController@update');
+Route::delete('autor/{autor}', 'AutorController@delete');
 
 Route::get('livros', 'LivroController@index');
 Route::get('livros/{livros}', 'LivroController@show');
