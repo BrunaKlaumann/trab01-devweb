@@ -3,6 +3,12 @@
 use Illuminate\Http\Request;
 
 Use App\Article;
+use App\UsuariosDaLivrariaController;
+use App\AutorController;
+use App\LivroController;
+use App\AutorLivroController;
+use App\LocacoesController;
+
 
 Route::group(['middleware' => 'auth:api'], function() {
  
@@ -45,3 +51,5 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 Route::post("Register", 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
+
+ 
