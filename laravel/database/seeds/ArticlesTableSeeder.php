@@ -1,4 +1,4 @@
-<?php
+php artisan db:seed --class=ArticlesTableSeeder<?php
 
 use Illuminate\Database\Seeder;
 
