@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Autores extends Model
 {
-    protected $fillable = ['autores_id', 'nome_autor'];
+    protected $fillable = ['nome_autor'];
 }
