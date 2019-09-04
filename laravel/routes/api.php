@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::delete('locacoes/{locacoes}', 'LocacoesController@delete');
 });
 
-Route::post("Register", 'Auth\RegisterController@register');
+Route::post("register", 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
-
+?>
  
