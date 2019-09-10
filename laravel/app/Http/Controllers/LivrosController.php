@@ -24,15 +24,17 @@ class LivroController extends Controller
         return response()->json($livro, 201);
     }
 
-    public function update(Request $request, Livro $livro)
+    public function update(Request $request, $id)
     {
+        $livro = Livro::findOrFail($id);
         $livro->update($request->all());
 
         return response()->json($livro, 200);
     }
 
-    public function delete(Livro $livro)
+    public function delete(Request $request, $id)
     {
+        $livro = Livro::findOrFail($id);
         $livro->delete();
 
         return response()->json(null, 204);

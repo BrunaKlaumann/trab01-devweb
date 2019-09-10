@@ -19,20 +19,22 @@ class LocacoesController extends Controller
 
     public function store(Request $request)
     {
-        $locacoes = Livro::create($request->all());
+        $locacoes = Locacoes::create($request->all());
 
         return response()->json($locacoes, 201);
     }
 
-    public function update(Request $request, Locacoes $locacoes)
+    public function update(Request $request, $id)
     {
+        $locacoes = Locacoes::findOrFail($id);
         $locacoes->update($request->all());
 
         return response()->json($locacoes, 200);
     }
 
-    public function delete(Locacoes $locacoes)
+    public function delete(Request $request, $id)
     {
+        $locacoes = Locacoes::findOrFail($id);
         $locacoes->delete();
 
         return response()->json(null, 204);

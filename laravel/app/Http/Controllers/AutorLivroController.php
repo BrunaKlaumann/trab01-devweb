@@ -24,15 +24,17 @@ class AutorLivroController extends Controller
         return response()->json($autorLivro, 201);
     }
 
-    public function update(Request $request, AutorLivro $autorLivro)
+    public function update(Request $request, $id)
     {
-        $livro->update($request->all());
+        $autorLivro = AutorLivro::findOrFail($id);
+        $autorLivro->update($request->all());
 
         return response()->json($autorLivro, 200);
     }
 
-    public function delete(Livro $autorLivro)
+    public function delete(Request $request, $id)
     {
+        $autorLivro = AutorLivro::findOrFail($id);
         $autorLivro->delete();
 
         return response()->json(null, 204);

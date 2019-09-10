@@ -14,7 +14,7 @@ class CreateUsuariosDaBibliotecaTable extends Migration
     public function up()
     {
         Schema::create('usuarios_da_livrarias', function (Blueprint $table) {
-            $table->bigIncrements('id_usuario');
+            $table->bigIncrements('id');
             $table->string('nome_usuario');
             $table->timestamps();
         });

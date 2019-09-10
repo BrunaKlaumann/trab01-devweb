@@ -14,6 +14,7 @@ class CreateAutorLivroTable extends Migration
     public function up()
     {
         Schema::create('autor_livros', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('id_livro_fk');
             $table->integer('id_autor_fk');
             $table->timestamps();

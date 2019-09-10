@@ -12,7 +12,7 @@ class UsuariosDaLivrariaController extends Controller
         return UsuariosDaLivraria::all();
     }
 
-    public function show(UsuariosDaLivraria $autorLivro)
+    public function show(UsuariosDaLivraria $usuario)
     {
         return $usuario;
     }
@@ -24,15 +24,17 @@ class UsuariosDaLivrariaController extends Controller
         return response()->json($usuario, 201);
     }
 
-    public function update(Request $request, UsuariosDaLivraria $usuario)
+    public function update(Request $request, $id)
     {
-        $livro->update($request->all());
+        $usuario = UsuariosDaLivraria::findOrFail($id);
+        $usuario->update($request->all());
 
         return response()->json($usuario, 200);
     }
 
-    public function delete(UsuariosDaLivraria $usuario)
+    public function delete(Request $request, $id)
     {
+        $usuario = UsuariosDaLivraria::findOrFail($id);
         $usuario->delete();
 
         return response()->json(null, 204);

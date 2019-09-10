@@ -14,7 +14,7 @@ class CreateLocacoesTable extends Migration
     public function up()
     {
         Schema::create('locacoes', function (Blueprint $table) {
-            $table->bigIncrements('id_locacao');
+            $table->bigIncrements('id');
             $table->integer('id_livro');
             $table->integer('id_usuario');
             $table->timestamp('data_locacao')->nullable();

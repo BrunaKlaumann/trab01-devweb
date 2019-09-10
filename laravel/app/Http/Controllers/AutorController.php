@@ -24,15 +24,17 @@ class AutorController extends Controller
         return response()->json($autor, 201);
     }
 
-    public function update(Request $request, Autor $autor)
+    public function update(Request $request, $id)
     {
+        $autor = Autor::findOrFail($id);
         $autor->update($request->all());
 
         return response()->json($autor, 200);
     }
 
-    public function delete(Autor $autor)
+    public function delete(Request $request, $id)
     {
+        $autor = Autor::findOrFail($id);
         $autor->delete();
 
         return response()->json(null, 204);
